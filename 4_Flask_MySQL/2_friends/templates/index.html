@@ -1,0 +1,66 @@
+<html>
+<head>
+  <title>Friends</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <h2>Add a Friend</h2>
+  <form action='/friends' method='POST'>
+    <label for="first_name">First Name:<input type="text" name="first_name" id="first_name"></label><br>
+    <label for="last_name">Last Name:<input type="text" name="last_name" id="last_name"></label><br>
+    <label for="age">Age:<input type="number" name="age" id="age"></label><br>
+    <label for="friend_since">Friend Since:<input type="date" name="friend_since" id="friend_since"></label><br>
+    <input type="submit" value="Add">
+  </form>
+
+
+
+<h1>These are all my friends!</h1>
+<!-- {% for friend in my_friends: %}
+   <p>ID: {{ friend['id'] }}</p>
+   <p>First Name: {{ friend['first_name'] }}</p>
+   <p>Last Name: {{ friend['last_name'] }}</p>
+   <p>Age: {{ friend['age'] }}</p>
+   <p>Friend Since: {{ friend['friend_since'] }}</p>
+   <hr>
+{% endfor %} -->
+
+
+
+<table>
+
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Age</th>
+    <th>Friend Since</th>
+  </tr>
+  {% for friend in my_friends: %}
+  <tr>
+    <td>{{ friend['id'] }}</td>
+    <td>{{friend.first_name}}</td>
+    <td>{{friend.last_name}}</td>
+    <td>{{friend.age}}</td>
+    <td>{{friend.friend_since}}</td>
+
+  </tr>
+{% endfor %}
+</table>
+
+
+<!-- {% for user in users%}
+tr
+  id
+  <td>{{ user.name }}</td>
+  dob
+  age
+  admin
+  a href='user/{{user.id}}/edit'
+
+
+{% endfor %} -->
+
+</body>
+</html>

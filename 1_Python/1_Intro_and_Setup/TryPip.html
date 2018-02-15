@@ -1,0 +1,58 @@
+<!--070217 nramiscal@gmail.com-->
+<!--Note: This isn't really an html file, I just did this to show the comments in a different color.-->
+
+pip install Django  
+<!--Pip is the package manager that we use in Python to install third party modules, such as Django.-->
+pip list
+<!--pip list lists installed packages, including editables.
+packages are listed in a case-insensitive sorted order.-->
+pip install Django
+<!--Requirement already satisfied: Django in /usr/local/lib/python2.7/site-packages
+Requirement already satisfied: pytz in /usr/local/lib/python2.7/site-packages (from Django)-->
+pip freeze (What's the difference between freeze and list?)
+<!--pip freeze outputs installed packages in requirements format.
+packages are listed in a case-insensitive sorted order.-->
+<!--pip list lists installed packages, including editables.
+packages are listed in a case-insensitive sorted order.-->
+
+cd ~/Desktop
+<!--moved to Desktop-->
+pip freeze > requirements.txt.
+<!--generates a requirements file from the output of pip freeze-->
+What do you see when you ls? 
+<!--I see a list of the files in the current directory, including requirements.txt which we just created.-->
+What's inside this file?
+<!--Below are the contents of the file, which are the installed packages in a case-insensitive sorted order.
+
+click==6.7
+Django==1.11.3
+Flask==0.12.2
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
+pytz==2017.2
+Werkzeug==0.12.2
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+~                                                                               
+"requirements.txt" 8L, 119C-->
+
+pip uninstall Django
+<!--uninstalls Django 1.11.3 (after pressing 'y' to continue with the uninstallation)-->
+pip show Django
+<!--returns nothing because Django was successfully uninstalled-->
+<!--normally this would show information about the installed package-->
+pip search Flask
+<!--searches for PyPI packages whose name or summary contains 'Flask'-->

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+
+        <fieldset>
+
+
+        <form action="/surveys/process" method="post">
+          {% csrf_token %}
+            Your Name: <input type="text" name="name"><br>
+            Dojo Location: <select name="location">
+              <option>Dallas</option>
+              <option>Seattle</option>
+              <option>San Jose</option>
+              <option>Chicago</option>
+              <option>Tulsa</option>
+              <option>Washington, DC</option>
+            </select><br>
+            Favorite Language: <select name="language"><br>
+              <option>Python</option>
+              <option>Ruby</option>
+              <option>JavaScript</option>
+              <option>Java</option>
+              <option>PHP</option>
+              <option>C#</option>
+              <option>Perl</option>
+              <option>Fortran</option>
+            </select><br>
+            Comment (optional): <br><textarea name="comment"></textarea><br>
+            <input type="submit" value="Submit">
+
+      </form>
+      </fieldset>
+  </body>
+</html>

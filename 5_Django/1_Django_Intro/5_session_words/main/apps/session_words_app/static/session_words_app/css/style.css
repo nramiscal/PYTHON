@@ -1,0 +1,40 @@
+/**{
+  margin: 0px;
+  padding: 0px;
+  /*font-family: sans-serif;*/
+  /*outline: 1px dashed red;*/
+/*}*/
+
+.wrapper{
+  width: 1000px;
+  height: 500px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.add_word{
+width: 300px;
+border-right: 5px solid blue;
+display: inline-block;
+vertical-align: top;
+}
+
+.show_word{
+  width: 450px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+ul{
+  list-style: none;
+}
+
+#clear{
+  margin-left: 300px;
+  margin-top: 50px;
+
+}
+
+button{
+  padding: 20px;
+}

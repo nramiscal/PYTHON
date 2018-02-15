@@ -1,0 +1,121 @@
+1. Error message:
+Traceback (most recent call last):
+  File "server.py", line 2, in <module>
+    from mysqlconnection import MySQLConnector
+ImportError: No module named mysqlconnection
+
+Reason: No mysqlconnection.py file in the same directory as server.py
+
+2. Error message:
+404 Not Found
+The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+
+Notes: Server started fine. But when go to localhost:5000 got error message.
+
+Reason: There is no route handler for the URL entered. Need @app.route('/specified path')
+
+3. Error message:
+This site can’t be reached
+
+localhost refused to connect.
+Search Google for localhost 5000
+ERR_CONNECTION_REFUSED
+
+Reson: Server is not running. Need to python server.py.
+
+4. Error message: None
+
+Notes: Tried commenting out 'host': 'localhost' but didn't get any error messages. Why??
+
+5. Error message:
+This site can’t be reached
+
+localhost refused to connect.
+Search Google for localhost 5000
+ERR_CONNECTION_REFUSED
+
+In Terminal:
+Traceback (most recent call last):
+  File "friend_server.py", line 4, in <module>
+    mysql = MySQLConnector(app,'friendsdb')
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 40, in MySQLConnector
+    return MySQLConnection(app, db)
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 15, in __init__
+    DATABASE_URI = "mysql://{}:{}@127.0.0.1:{}/{}".format(config['user'], config['password'], config['port'], config['database'])
+KeyError: 'database'
+
+Reason: Commented out 'database': db.
+
+6. Error message:
+Traceback (most recent call last):
+  File "friend_server.py", line 4, in <module>
+    mysql = MySQLConnector(app,'friendsdb')
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 40, in MySQLConnector
+    return MySQLConnection(app, db)
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 15, in __init__
+    DATABASE_URI = "mysql://{}:{}@127.0.0.1:{}/{}".format(config['user'], config['password'], config['port'], config['database'])
+KeyError: 'user'
+
+Reason: Commented out 'user': 'root'
+
+7. Error message:
+Traceback (most recent call last):
+  File "friend_server.py", line 4, in <module>
+    mysql = MySQLConnector(app,'friendsdb')
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 40, in MySQLConnector
+    return MySQLConnection(app, db)
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 15, in __init__
+    DATABASE_URI = "mysql://{}:{}@127.0.0.1:{}/{}".format(config['user'], config['password'], config['port'], config['database'])
+KeyError: 'password'
+
+Reason: Commented out 'password': 'root'
+
+8. Error message:
+Traceback (most recent call last):
+  File "friend_server.py", line 4, in <module>
+    mysql = MySQLConnector(app,'friendsdb')
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 40, in MySQLConnector
+    return MySQLConnection(app, db)
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 15, in __init__
+    DATABASE_URI = "mysql://{}:{}@127.0.0.1:{}/{}".format(config['user'], config['password'], config['port'], config['database'])
+KeyError: 'port'
+
+Reason: Commented out 'port': '8889'
+
+9. Error message:
+Traceback (most recent call last):
+  File "friend_server.py", line 4, in <module>
+    mysql = MySQLConnector(app,'friendsdb')
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 40, in MySQLConnector
+    return MySQLConnection(app, db)
+  File "/Users/nramiscal/Desktop/PYTHON/Flask-SQL/DB_Connection/mysqlconnection.py", line 9, in __init__
+    'database': bogusdb, # we got db as an argument
+NameError: global name 'bogusdb' is not defined
+
+Reason: Changed to 'database': bogusdb.
+
+10. Error message:
+sqlalchemy.exc.OperationalError
+OperationalError: (_mysql_exceptions.OperationalError) (1049, "Unknown database 'bogusdb'")
+
+Notes: Server.py started fine. But when tried to visit localhost:5000 got above page.
+
+Reason: Changed to 'database' : 'bogusdb' in quotes. Should be db, no quotes, because passed into the __init__ function as an argument.
+
+11. Error message:
+sqlalchemy.exc.OperationalError
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'none'@'localhost' (using password: YES)")
+
+Reason: Changed to 'user': 'none'. User should be 'root'.
+
+12. Error message:
+sqlalchemy.exc.OperationalError
+OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+Reson: Changed to 'password': 'none'. Wrong password. Should be 'root'.
+
+13. Error message:
+sqlalchemy.exc.OperationalError
+OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+
+Reason: Changed to 'port': '3306'. Wrong port number. Needs to match the port the sql server is running on.

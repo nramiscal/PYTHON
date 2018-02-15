@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <body>
+        <fieldset>
+          <p>Thanks for submitting this form! You have</p>
+          <p>submitted this form {{ request.session.count }} times now.</p>
+        </fieldset>
+        <fieldset>
+
+
+        <ul>
+            <li>Name: {{ request.session.name }}</li>
+            <li>Dojo location: {{ request.session.location }}</li>
+            <li>Favorite language: {{ request.session.language }}</li>
+            <li>Comment: {{ request.session.comment }}</li>
+        </ul>
+        <form class="" action="/index" method="post">
+          {% csrf_token %}
+          <input type="submit" value="Go Back">
+        </form>
+        </fieldset>
+    </body>
+</html>
